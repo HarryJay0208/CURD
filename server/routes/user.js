@@ -1,0 +1,18 @@
+const express = require('express');
+const router = express.Router();
+const userControllers = require('../controllers/userController');
+
+router.get('/', userControllers.view);
+router.post('/', userControllers.find);
+
+
+
+router.get('/adduser', userControllers.form);
+router.post('/adduser', userControllers.create);
+router.get('/edituser/:id', userControllers.edit);
+
+router.post('/edituser/:id', userControllers.update);
+router.get('/viewuser/:id', userControllers.viewall);
+router.get('/:id', userControllers.delete);
+
+module.exports = router;
